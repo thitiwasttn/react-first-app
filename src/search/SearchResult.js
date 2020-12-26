@@ -1,16 +1,10 @@
 import React from "react";
 
-function SearchResult({name}) {
-    {
-        console.log('MyRsult {} ' ,name);
-    }
+function SearchResult({name , img}) {
     return (
         <div className="Result">
-            <div className="Result__name">
-                <strong>
-                    {name}
-                </strong>
-            </div>
+            <img src={img} alt="" width={200}/>
+            <strong>{name}</strong>
         </div>
     );
 }

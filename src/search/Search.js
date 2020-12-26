@@ -4,9 +4,11 @@ import SearchResult from "./SearchResult";
 
 let API_URL_SEARCH = 'https://api.themoviedb.org/3/search/movie';
 let API_KEY = 'ae5c359f5f1c8100305cb09b8a80790b';
+let IMAGE_URL = 'https://image.tmdb.org/t/p/w500'
 
 
 function Search() {
+    
     const [name, setName] = useState([]);
 
     let inputStyle = {
@@ -21,7 +23,6 @@ function Search() {
     }
 
     function search(keyword) {
-        console.log('value {} ', keyword);
         if (keyword.length > 2) {
             Axios.get(API_URL_SEARCH, {
                 params: {
@@ -36,16 +37,18 @@ function Search() {
     }
 
     function populateDate(jsonData) {
-       // console.log()
+        // console.log()
         let data = JSON.parse(jsonData);
         let names = data.results;
-        let test = [];
+
+        let post = []
         for (let item of names) {
-            const newName = item.original_title;
-            test.push(newName);
+            const test = {};
+            test.nname = item.original_title;
+            test.image = IMAGE_URL + item.poster_path;
+            post.push(test);
         }
-        setName(test);
-        //console.log(test)
+        setName(post);
     }
 
     return (
@@ -56,7 +59,7 @@ function Search() {
                    onChange={onChange}/>
             {
                 name.map((x) => {
-                    return <SearchResult name={x}/>;
+                    return <SearchResult name={x.nname} img={x.image}/>;
                 })
             }
         </div>
