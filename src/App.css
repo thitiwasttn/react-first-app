@@ -43,3 +43,9 @@
     padding-left: 16px;
     color: white;
 }
+
+.Result{
+    border: 1px solid;
+    margin: 5px auto;
+    width: 80%;
+}

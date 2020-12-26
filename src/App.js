@@ -20,6 +20,7 @@ function App() {
                 </thead>
             </table>
             <Search/>
+
         </div>
     );
 }
