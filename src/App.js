@@ -9,6 +9,7 @@ let header = {
     display: 'block'
 }
 function App() {
+    
     return (
         <div className="App">
             <table className="Navbar">
@@ -19,7 +20,7 @@ function App() {
                 </tr>
                 </thead>
             </table>
-            <Search/>
+            <Search />
 
         </div>
     );

@@ -8,9 +8,8 @@ let IMAGE_URL = 'https://image.tmdb.org/t/p/w500'
 
 
 function Search() {
-    
-    const [name, setName] = useState([]);
 
+    const [name, setName] = useState([]);
     let inputStyle = {
         fontSize: 24,
         display: 'block',
